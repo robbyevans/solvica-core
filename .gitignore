@@ -1,24 +1,97 @@
-# Logs
-logs
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
+# ===============================
+# CLIENT (React / Vite / Node)
+# ===============================
 
-node_modules
-dist
-dist-ssr
-*.local
+# Logs
+client/logs
+client/*.log
+client/npm-debug.log*
+client/yarn-debug.log*
+client/yarn-error.log*
+client/pnpm-debug.log*
+client/lerna-debug.log*
+
+# Node modules and build output
+client/node_modules
+client/dist
+client/dist-ssr
+client/*.local
 
 # Editor directories and files
-.vscode/*
-!.vscode/extensions.json
-.idea
-.DS_Store
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
+client/.vscode/*
+!client/.vscode/extensions.json
+client/.idea
+client/.DS_Store
+client/*.suo
+client/*.ntvs*
+client/*.njsproj
+client/*.sln
+client/*.sw?
+
+# ===============================
+# SERVER (Ruby on Rails API)
+# ===============================
+
+# Ignore bundler config
+server/.bundle
+
+# Ignore default SQLite database and other db files
+server/db/*.sqlite3
+server/db/*.sqlite3-journal
+server/db/*.sqlite3-*
+
+# Ignore all logs, temp files, and PID files
+server/log/*
+!server/log/.keep
+server/tmp
+server/tmp/*
+!server/tmp/.keep
+
+# Ignore storage (for Active Storage)
+!server/storage/.keep
+server/storage/*
+
+# Ignore coverage reports (from SimpleCov)
+server/coverage/
+server/spec/examples.txt
+
+# Ignore system test screenshots
+server/spec/system/screenshots/*
+!server/spec/system/screenshots/.keep
+
+# Ignore uploaded files in test or development
+server/public/system/*
+server/public/uploads/*
+server/public/packs
+server/public/packs-test
+server/node_modules
+server/yarn-error.log
+
+# Ignore Rails credentials and master key (important)
+server/config/master.key
+server/config/credentials.yml.enc
+
+# Ignore dotenv environment files
+server/.env
+server/.env.*.local
+
+# Ignore byebug history
+server/.byebug_history
+
+# Ignore Capybara screenshots (if any)
+server/capybara-*.html
+
+# ===============================
+# GENERAL PROJECT
+# ===============================
+
+# OS and editor files
+Thumbs.db
+*.bak
+*.tmp
+*.swp
+*.lock
+
+# Ignore dependency lock and gem files
+server/*.gem
+server/Gemfile.lock
