@@ -1,0 +1,65 @@
+.start-page-container{
+    width: 1440px;
+    height: 1024px;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+
+}
+.left-container{
+    width: 712px;
+    height: 1024px;
+    background-color: #697BFF;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 10px 20px 20px 10px;
+
+}
+.right-container{
+   width: 728px;
+    height: 1024px;
+   background-color: pink;
+}
+.los-text{
+    font-family: Nunito;
+    font-weight: 800;
+    font-style: ExtraBold;
+    font-size: 85px;
+    leading-trim: NONE;
+    line-height: 20px;
+    letter-spacing: 0.3px;
+    vertical-align: middle;
+    color: #fff
+    ;
+}
+
+.munchos-text{
+    font-family: Nunito;
+    font-weight: 800;
+    font-style: ExtraBold;
+    font-size: 85px;
+    leading-trim: NONE;
+    line-height: 20px;
+    letter-spacing: 0.3px;
+    vertical-align: middle;
+}
+.title-wrapper{
+    width: 520px;
+    height: 210px;
+
+}
+.description-wrapper{
+
+}
+.description-text{
+    font-family: Nunito;
+font-weight: 700;
+font-size: 32px;
+leading-trim: NONE;
+line-height: 42px;
+letter-spacing: 0.1px;
+vertical-align: middle;
+color: #fff;
+
+}
