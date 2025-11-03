@@ -1,0 +1,54 @@
+.landing-page {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.card-jane {
+  background-color: #b71c1c;
+  padding: 16px;
+  border-radius: 8px;
+  width: 280px;
+}
+.title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #ffff;
+  margin-bottom: 8px;
+}
+.description {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #ffff;
+}
+.card-michael {
+  background-color: #e65100;
+  padding: 16px;
+  border-radius: 8px;
+  width: 280px;
+}
+.card-babra {
+  background-color: #f9a825;
+  padding: 16px;
+  border-radius: 8px;
+  width: 280px;
+}
+.card-faith {
+  background-color: #2e7d32;
+  padding: 16px;
+  border-radius: 8px;
+  width: 280px;
+}
+.card-kevin {
+  background-color: #1565c0;
+  padding: 16px;
+  border-radius: 8px;
+  width: 280px;
+}
+.card-alice {
+  background-color: #4a148c;
+  padding: 16px;
+  border-radius: 8px;
+  width: 280px;
+}
