@@ -1,7 +1,11 @@
-import TestCards from "./components/TestCards/TestCards";
+import TestCardsContainer from "./containers/TestCardsContainer";
 
 function App() {
-  return <TestCards />;
+  return (
+    <>
+      <TestCardsContainer />
+    </>
+  );
 }
 
 export default App;
