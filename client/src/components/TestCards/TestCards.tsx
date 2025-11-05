@@ -1,7 +1,6 @@
 import "./TestCardsStyles.css";
 
 const TestCards = () => {
-  const cards = [{}];
   return (
     <div className="landing-page">
       <div className="card-jane">
