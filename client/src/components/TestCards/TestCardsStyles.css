@@ -1,0 +1,36 @@
+.landing-page {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.card {
+  padding: 16px;
+  border-radius: 8px;
+  width: 280px;
+}
+.title {
+  font-size: 20px;
+  font-weight: bold;
+  /* color: #ffff; */
+  margin-bottom: 8px;
+  text-align: center;
+}
+.description {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #ffff;
+  text-align: center;
+}
+.card-image {
+  width: 100%;
+  height: auto;
+  margin-top: 12px;
+  border-radius: 4px;
+}
+.year {
+  font-size: 12px;
+  color: #dddddd;
+  margin-top: 8px;
+}
