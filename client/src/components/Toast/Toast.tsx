@@ -3,7 +3,7 @@ import * as S from "./styles";
 
 export type ToastType = "success" | "error" | "info";
 
-interface ToastProps {
+interface IProps {
   message: string;
   type: ToastType;
   isVisible: boolean;
@@ -11,7 +11,7 @@ interface ToastProps {
   duration?: number;
 }
 
-const Toast: React.FC<ToastProps> = ({
+const Toast: React.FC<IProps> = ({
   message,
   type,
   isVisible,
