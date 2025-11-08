@@ -1,25 +1,15 @@
 import React from "react";
 import * as S from "./styles";
+import type { TTodo } from "../../types/types";
 
-interface Todo {
-  id?: string;
-  title: string;
-  description: string;
-}
-
-interface TodoCardProps {
-  todo: Todo;
+interface IProps {
+  todo: TTodo;
   onClick: () => void;
   onEdit: () => void;
   onDelete: () => void;
 }
 
-const TodoCard: React.FC<TodoCardProps> = ({
-  todo,
-  onClick,
-  onEdit,
-  onDelete,
-}) => {
+const TodoCard: React.FC<IProps> = ({ todo, onClick, onEdit, onDelete }) => {
   const handleEditClick = (e: React.MouseEvent) => {
     e.stopPropagation();
     onEdit();

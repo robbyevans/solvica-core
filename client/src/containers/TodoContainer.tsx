@@ -3,7 +3,7 @@ import { useTodo } from "../redux/hooks/useTodo";
 import TodoList from "../components/TodoList/TodoList";
 import TodoForm from "../components/TodoForm/TodoForm";
 import TodoItemModal from "../components/TodoItemModal/TodoItemModal";
-import type { Todo } from "../redux/slices/todoSlice";
+import type { TTodo } from "../types/types";
 
 const TodoContainer: React.FC = () => {
   const {
@@ -14,11 +14,11 @@ const TodoContainer: React.FC = () => {
     handleDeleteTodo,
   } = useTodo();
 
-  const [selectedTodo, setSelectedTodo] = useState<Todo | null>(null);
+  const [selectedTodo, setSelectedTodo] = useState<TTodo | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [editingTodo, setEditingTodo] = useState<Todo | null>(null);
+  const [editingTodo, setEditingTodo] = useState<TTodo | null>(null);
 
-  const handleTodoClick = (todo: Todo) => {
+  const handleTodoClick = (todo: TTodo) => {
     setSelectedTodo(todo);
     setIsModalOpen(true);
   };
@@ -33,7 +33,7 @@ const TodoContainer: React.FC = () => {
     handleCreateTodo(todoData);
   };
 
-  const handleEdit = (todo: Todo) => {
+  const handleEdit = (todo: TTodo) => {
     setEditingTodo(todo);
     setIsModalOpen(true);
   };

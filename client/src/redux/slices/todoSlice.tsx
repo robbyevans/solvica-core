@@ -1,11 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
-
-export interface Todo {
-  id?: string;
-  title: string;
-  description: string;
-}
+import type { TTodo } from "../../types/types";
 
 const API_URL = "https://690ef361bd0fefc30a062d2a.mockapi.io/api/todos";
 
@@ -13,12 +8,12 @@ const API_URL = "https://690ef361bd0fefc30a062d2a.mockapi.io/api/todos";
 export const getTodos = createAsyncThunk("todos/getTodos", async () => {
   const res = await fetch(API_URL);
   if (!res.ok) throw new Error("Failed to fetch todos");
-  return (await res.json()) as Todo[];
+  return (await res.json()) as TTodo[];
 });
 
 export const createTodo = createAsyncThunk(
   "todos/createTodo",
-  async (todo: Omit<Todo, "id">, { rejectWithValue }) => {
+  async (todo: Omit<TTodo, "id">, { rejectWithValue }) => {
     try {
       const res = await fetch(API_URL, {
         method: "POST",
@@ -26,7 +21,7 @@ export const createTodo = createAsyncThunk(
         body: JSON.stringify(todo),
       });
       if (!res.ok) throw new Error("Failed to create todo");
-      return (await res.json()) as Todo;
+      return (await res.json()) as TTodo;
     } catch (error) {
       return rejectWithValue(
         error instanceof Error ? error.message : "Failed to create todo"
@@ -38,7 +33,7 @@ export const createTodo = createAsyncThunk(
 export const updateTodo = createAsyncThunk(
   "todos/updateTodo",
   async (
-    { id, updates }: { id: string; updates: Partial<Todo> },
+    { id, updates }: { id: string; updates: Partial<TTodo> },
     { rejectWithValue }
   ) => {
     try {
@@ -48,7 +43,7 @@ export const updateTodo = createAsyncThunk(
         body: JSON.stringify(updates),
       });
       if (!res.ok) throw new Error("Failed to update todo");
-      return (await res.json()) as Todo;
+      return (await res.json()) as TTodo;
     } catch (error) {
       return rejectWithValue(
         error instanceof Error ? error.message : "Failed to update todo"
@@ -80,7 +75,7 @@ interface ToastState {
 }
 
 interface TodoState {
-  todos: Todo[];
+  todos: TTodo[];
   loading: boolean;
   error: string | null;
   toast: ToastState;
@@ -122,7 +117,7 @@ export const todoSlice = createSlice({
       .addCase(getTodos.pending, (state) => {
         state.loading = true;
       })
-      .addCase(getTodos.fulfilled, (state, action: PayloadAction<Todo[]>) => {
+      .addCase(getTodos.fulfilled, (state, action: PayloadAction<TTodo[]>) => {
         state.loading = false;
         state.todos = action.payload;
         state.toast = {
@@ -140,7 +135,7 @@ export const todoSlice = createSlice({
           isVisible: true,
         };
       })
-      .addCase(createTodo.fulfilled, (state, action: PayloadAction<Todo>) => {
+      .addCase(createTodo.fulfilled, (state, action: PayloadAction<TTodo>) => {
         state.todos.push(action.payload);
         state.toast = {
           message: "Todo created successfully!",
@@ -155,7 +150,7 @@ export const todoSlice = createSlice({
           isVisible: true,
         };
       })
-      .addCase(updateTodo.fulfilled, (state, action: PayloadAction<Todo>) => {
+      .addCase(updateTodo.fulfilled, (state, action: PayloadAction<TTodo>) => {
         const index = state.todos.findIndex((t) => t.id === action.payload.id);
         if (index !== -1) state.todos[index] = action.payload;
         state.toast = {

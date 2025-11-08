@@ -1,24 +1,19 @@
 import React, { useState, useEffect } from "react";
 import TodoForm from "../TodoForm/TodoForm";
 import * as S from "./styles";
+import type { TTodo } from "../../types/types";
 
-interface Todo {
-  id?: string;
-  title: string;
-  description: string;
-}
-
-interface TodoItemModalProps {
+interface IProps {
   isOpen: boolean;
-  todo: Todo | null;
+  todo: TTodo | null;
   onClose: () => void;
-  onEdit: (todo: Todo) => void;
+  onEdit: (todo: TTodo) => void;
   onDelete: () => void;
   isEditing?: boolean;
   onUpdate?: (todo: { title: string; description: string }) => void;
 }
 
-const TodoItemModal: React.FC<TodoItemModalProps> = ({
+const TodoItemModal: React.FC<IProps> = ({
   isOpen,
   todo,
   onClose,

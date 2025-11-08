@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import * as S from "./styles";
+import type { TTodo } from "../../types/types";
 
-interface TodoFormProps {
-  onSubmit: (todo: { title: string; description: string }) => void;
-  initialData?: { title: string; description: string };
+interface IProps {
+  onSubmit: (todo: TTodo) => void;
+  initialData?: TTodo;
   buttonText?: string;
 }
 
-const TodoForm: React.FC<TodoFormProps> = ({
+const TodoForm: React.FC<IProps> = ({
   onSubmit,
   initialData = { title: "", description: "" },
   buttonText = "Add Todo",

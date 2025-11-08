@@ -1,21 +1,16 @@
 import React from "react";
 import TodoCard from "../TodoCard/TodoCard";
 import * as S from "./styles";
+import type { TTodo } from "../../types/types";
 
-interface Todo {
-  id?: string;
-  title: string;
-  description: string;
-}
-
-interface TodoListProps {
-  todos: Todo[];
-  onTodoClick: (todo: Todo) => void;
-  onEditClick: (todo: Todo) => void;
+interface IProps {
+  todos: TTodo[];
+  onTodoClick: (todo: TTodo) => void;
+  onEditClick: (todo: TTodo) => void;
   onDeleteClick: (id: string) => void;
 }
 
-const TodoList: React.FC<TodoListProps> = ({
+const TodoList: React.FC<IProps> = ({
   todos,
   onTodoClick,
   onEditClick,
