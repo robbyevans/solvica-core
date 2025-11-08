@@ -1,11 +1,11 @@
-import TestCards from "./components/TestCards/TestCards";
 import "./App.css";
+import TodoContainer from "./containers/TodoContainer";
 
 function App() {
   return (
-    <>
-      <TestCards />
-    </>
+    <div className="App">
+      <TodoContainer />
+    </div>
   );
 }
 
