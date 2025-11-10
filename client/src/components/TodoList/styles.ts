@@ -18,3 +18,8 @@ export const List = styled.div`
   flex-direction: column;
   gap: 12px;
 `;
+export const DueDate = styled.p`
+  font-size: 0.9rem;
+  color: #777;
+  margin-top: 6px;
+`;
