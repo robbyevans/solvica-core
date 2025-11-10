@@ -10,18 +10,24 @@ interface IProps {
 
 const TodoForm: React.FC<IProps> = ({
   onSubmit,
-  initialData = { title: "", description: "" },
+  initialData = { title: "", description: "", dueDate: "" },
   buttonText = "Add Todo",
 }) => {
   const [title, setTitle] = useState(initialData.title);
   const [description, setDescription] = useState(initialData.description);
+  const [dueDate, setDueDate] = useState(initialData.dueDate);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (title.trim() && description.trim()) {
-      onSubmit({ title: title.trim(), description: description.trim() });
+    if (title.trim() && description.trim() && dueDate) {
+      onSubmit({
+        title: title.trim(),
+        description: description.trim(),
+        dueDate,
+      });
       setTitle("");
       setDescription("");
+      setDueDate("");
     }
   };
 
@@ -47,6 +53,15 @@ const TodoForm: React.FC<IProps> = ({
           onChange={(e) => setDescription(e.target.value)}
           placeholder="Enter todo description"
           rows={4}
+        />
+      </S.InputGroup>
+      <S.InputGroup>
+        <S.Label htmlFor="dueDate">Due Date</S.Label>
+        <S.Input
+          id="dueDate"
+          type="date"
+          value={dueDate}
+          onChange={(e) => setDueDate(e.target.value)}
           required
         />
       </S.InputGroup>

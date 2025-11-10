@@ -76,3 +76,14 @@ export const DeleteButton = styled.button`
     background-color: #c82333;
   }
 `;
+
+export const KosgeiTitle = styled.h1`
+  font-size: 24px;
+  color: red;
+  margin-bottom: 16px;
+`;
+export const DueDate = styled.p`
+  font-size: 0.9rem;
+  color: #777;
+  margin-top: 6px;
+`;

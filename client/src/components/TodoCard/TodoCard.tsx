@@ -25,7 +25,20 @@ const TodoCard: React.FC<IProps> = ({ todo, onClick, onEdit, onDelete }) => {
       <S.Content>
         <S.Title>{todo.title}</S.Title>
         <S.Description>{todo.description}</S.Description>
+
+        {/* ✅ Display due date if available */}
+        {todo.dueDate && (
+          <S.DueDate>
+            Due Date:{" "}
+            {new Date(todo.dueDate).toLocaleDateString(undefined, {
+              year: "numeric",
+              month: "short",
+              day: "numeric",
+            })}
+          </S.DueDate>
+        )}
       </S.Content>
+
       <S.Actions>
         <S.EditButton onClick={handleEditClick}>Edit</S.EditButton>
         <S.DeleteButton onClick={handleDeleteClick}>Delete</S.DeleteButton>
